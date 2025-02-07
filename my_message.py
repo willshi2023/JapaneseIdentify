@@ -28,22 +28,6 @@ def get_updates():
     response = requests.get(url)
     return response.json()
 
-
-
-def send_message(message):
-    print(message)
-    chat_id = get_chat_id()
-    url = f"https://api.telegram.org/bot{API_TOKEN}/sendMessage"
-    payload = {"chat_id": chat_id, "text": message,"parse_mode": "Markdown"}
-    response = requests.post(url, json=payload)
-
-    if response.status_code == 200:
-        # print("Message sent successfully!")
-        pass
-    else:
-        print("Failed to send message.")
-
-
 # 发送消息的函数
 def send_message2group(text):
     try:
