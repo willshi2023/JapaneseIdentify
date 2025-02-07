@@ -4,6 +4,7 @@
 ```
 pip install SpeechRecognition
 pip install pydub
+pip install python-telegram-bot
 ```
 
 ## 安装 FFmpeg
