@@ -49,6 +49,13 @@ async def handle_audio(update, context):
         except Exception as e:
             print("发生异常：", str(e))
             traceback.print_exc()
+            try:
+                message2 = (
+                    f'识别失败，请尝试其他录音\n'
+                )
+                my_message.send_message2group(message2)
+            except:
+                pass
 
 
 def main():
