@@ -37,8 +37,12 @@ async def handle_audio(update, context):
         my_file.delete_safe(file_path2)
         # 发送消息到telegram
         message2 = (
-            f' *{transfer_text_log_message}*\n'
-            f'语音识别结果: *{text}*\n'
+            f'{transfer_text_log_message}\n'
+            f'语音识别结果如下:\n'
+        )
+        my_message.send_message2group(message2)
+        message2 = (
+            f'*{text}*\n'
         )
         my_message.send_message2group(message2)
 
