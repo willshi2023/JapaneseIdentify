@@ -28,23 +28,26 @@ async def handle_audio(update, context):
         file = await context.bot.get_file(audio.file_id)
         filename,file_path1 = my_file.get_filename()
         await file.download_to_drive(file_path1)
-        # 将音频进行转换
-        transfer_format_log_message,file_path2 =  transfer_format(file_path1)
-        # 将语音转换成文字
-        transfer_text_log_message,text = language.transfer_text(file_path2)
-        # 删除之前的文件
-        my_file.delete_safe(file_path1)
-        my_file.delete_safe(file_path2)
-        # 发送消息到telegram
-        message2 = (
-            f'{transfer_text_log_message}\n'
-            f'语音识别结果如下:\n'
-        )
-        my_message.send_message2group(message2)
-        message2 = (
-            f'*{text}*\n'
-        )
-        my_message.send_message2group(message2)
+        try:
+            # 将音频进行转换
+            transfer_format_log_message,file_path2 =  transfer_format(file_path1)
+            # 将语音转换成文字
+            transfer_text_log_message,text = language.transfer_text(file_path2)
+            # 删除之前的文件
+            my_file.delete_safe(file_path1)
+            my_file.delete_safe(file_path2)
+            # 发送消息到telegram
+            message2 = (
+                f'{transfer_text_log_message}\n'
+                f'语音识别结果如下:\n'
+            )
+            my_message.send_message2group(message2)
+            message2 = (
+                f'*{text}*\n'
+            )
+            my_message.send_message2group(message2)
+        except:
+            pass
 
 
 def main():
