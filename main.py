@@ -1,5 +1,5 @@
-import os
 import time
+import traceback
 
 from pydub import AudioSegment
 from telegram.ext import Application, MessageHandler, filters
@@ -48,6 +48,7 @@ async def handle_audio(update, context):
             my_message.send_message2group(message2)
         except Exception as e:
             print("发生异常：", str(e))
+            traceback.print_exc()
 
 
 def main():
