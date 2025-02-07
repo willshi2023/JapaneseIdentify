@@ -3,3 +3,4 @@
 *.wav
 secret.py
 __pycache__/
+*.ogg

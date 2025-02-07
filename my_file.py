@@ -10,7 +10,7 @@ def delete_safe(file_path):
     else:
         print(f"文件 {file_path} 不存在")
 
-def get_filename():
+def get_filename(suffix):
     # 获取当前项目路径
     current_dir = Path.cwd()
 
@@ -23,7 +23,7 @@ def get_filename():
     # 生成文件名：当前日期 + UUID
     current_date = datetime.now().strftime("%Y%m%d")
     unique_id = str(uuid.uuid4())
-    filename = f"{current_date}_{unique_id}.m4a"
+    filename = f"{current_date}_{unique_id}.{suffix}"
 
     # 完整的文件路径
     file_path = resource_dir / filename
