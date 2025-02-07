@@ -2,3 +2,4 @@
 *.m4a
 *.wav
 secret.py
+__pycache__/
