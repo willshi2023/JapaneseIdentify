@@ -1,5 +1,5 @@
 ## telegram交流群 
-t.me/languageidentify
+https://t.me/languageidentify
 ## 说明
 程序可以利用电报进行日语音频转日语文字，支持录音和直接语音，完全免费  
 
