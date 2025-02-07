@@ -46,8 +46,8 @@ async def handle_audio(update, context):
                 f'*{text}*\n'
             )
             my_message.send_message2group(message2)
-        except:
-            pass
+        except Exception as e:
+            print("发生异常：", str(e))
 
 
 def main():
