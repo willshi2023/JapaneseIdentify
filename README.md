@@ -5,6 +5,8 @@
 pip install SpeechRecognition
 pip install pydub
 pip install python-telegram-bot
+pip install requests
+
 ```
 
 ## 安装 FFmpeg
@@ -13,6 +15,9 @@ pip install python-telegram-bot
 
 1. 从 [FFmpeg 官方网站](https://ffmpeg.org/download.html) 下载 FFmpeg。
 2. 配置环境变量（自行查找具体步骤）。
+
+## Telegram机器人
+请自行查找具体步骤
 
 ## 使用说明
 
