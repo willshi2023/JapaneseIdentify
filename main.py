@@ -54,6 +54,7 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 async def transfer_text_and_send(file_path1):
+    file_path2 = ''
     try:
         # 将音频进行转换
         transfer_format_log_message, file_path2 = transfer_format(file_path1)
@@ -80,6 +81,9 @@ async def transfer_text_and_send(file_path1):
                 f'识别失败，请尝试其他音频\n'
             )
             my_message.send_message2group(message2)
+            # 删除之前的文件
+            my_file.delete_safe(file_path1)
+            my_file.delete_safe(file_path2)
         except:
             pass
 
